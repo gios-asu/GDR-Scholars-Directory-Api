@@ -8,9 +8,11 @@ use GdrScholars\Models\Opportunity;
 use GdrScholars\Repositories\OpportunityRepository;
 use Illuminate\Http\Request;
 use GdrScholars\Http\Controllers\AppBaseController;
+use GdrScholars\Http\Transformers\OpportunityTransformer;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
+use Flugg\Responder\Traits\RespondsWithJson;
 
 /**
  * Class OpportunityController
@@ -19,6 +21,8 @@ use Response;
 
 class OpportunityAPIController extends AppBaseController
 {
+    use RespondsWithJson;
+
     /** @var  OpportunityRepository */
     private $opportunityRepository;
 
@@ -65,7 +69,7 @@ class OpportunityAPIController extends AppBaseController
         $this->opportunityRepository->pushCriteria(new LimitOffsetCriteria($request));
         $opportunities = $this->opportunityRepository->all();
 
-        return $this->sendResponse($opportunities->toArray(), 'Opportunities retrieved successfully');
+        return $this->successResponse($opportunities);
     }
 
     /**
