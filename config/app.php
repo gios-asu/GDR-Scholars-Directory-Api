@@ -171,13 +171,13 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
+        GdrScholars\Providers\AppServiceProvider::class,
+        GdrScholars\Providers\AuthServiceProvider::class,
+        // GdrScholars\Providers\BroadcastServiceProvider::class,
+        GdrScholars\Providers\EventServiceProvider::class,
 
         Appointer\Swaggervel\SwaggervelServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        GdrScholars\Providers\RouteServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
 
         Collective\Html\HtmlServiceProvider::class,

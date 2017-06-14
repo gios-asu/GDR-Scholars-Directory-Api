@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace GdrScholars\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
+use GdrScholars\User;
+use GdrScholars\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 

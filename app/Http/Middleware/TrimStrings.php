@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace GdrScholars\Http\Middleware;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as BaseTrimmer;
 
