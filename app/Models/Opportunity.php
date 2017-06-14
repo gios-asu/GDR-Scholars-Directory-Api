@@ -3,6 +3,8 @@
 namespace GdrScholars\Models;
 
 use Eloquent as Model;
+use Flugg\Responder\Contracts\Transformable;
+use GdrScholars\Http\Transformers\OpportunityTransformer;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -102,7 +104,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *      )
  * )
  */
-class Opportunity extends Model
+class Opportunity extends Model implements Transformable
 {
     use SoftDeletes;
 
@@ -163,5 +165,13 @@ class Opportunity extends Model
         'num_positions' => 'required'
     ];
 
-    
+    /**
+     * The transformer used to transform the model data.
+     *
+     * @return Transformer|callable|string|null
+     */
+    public static function transformer()
+    {
+        return OpportunityTransformer::class;
+    }
 }
