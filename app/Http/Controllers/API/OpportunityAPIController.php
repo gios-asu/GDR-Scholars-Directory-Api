@@ -119,6 +119,6 @@ class OpportunityAPIController extends AppBaseController
             return $this->sendError('Opportunity not found');
         }
 
-        return $this->sendResponse($opportunity->toArray(), 'Opportunity retrieved successfully');
+        return $this->successResponse($opportunity);
     }
 }
