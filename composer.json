@@ -4,6 +4,12 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/appointer/swaggervel"
+        }
+    ],
     "require": {
         "php": ">=5.6.4",
         "infyomlabs/adminlte-templates": "5.4.x-dev",
@@ -15,7 +21,9 @@
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.7"
+        "phpunit/phpunit": "~5.7",
+        "appointer/swaggervel": "dev-master",
+        "infyomlabs/swagger-generator": "dev-master"
     },
     "autoload": {
         "classmap": [
