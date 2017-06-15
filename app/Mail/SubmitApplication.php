@@ -11,14 +11,21 @@ class SubmitApplication extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /*
+     * The application details being submitted for a fellowship opportunity
+     *
+     * @var Application
+     */
+    public $application;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Array $application)
     {
-        //
+        $this->application = $application;
     }
 
     /**
@@ -28,6 +35,6 @@ class SubmitApplication extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->markdown('emails.submit-application');
     }
 }
