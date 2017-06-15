@@ -14,6 +14,7 @@
         "php": ">=7.0.20",
         "barryvdh/laravel-cors": "^0.9.2",
         "flugger/laravel-responder": "^1.2",
+        "guzzlehttp/guzzle": "^6.2",
         "infyomlabs/adminlte-templates": "5.4.x-dev",
         "infyomlabs/laravel-generator": "5.4.x-dev",
         "laravel/framework": "5.4.*",
