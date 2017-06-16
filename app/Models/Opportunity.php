@@ -109,7 +109,7 @@ class Opportunity extends Model implements Transformable
     use SoftDeletes;
 
     public $table = 'opportunities';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -164,6 +164,15 @@ class Opportunity extends Model implements Transformable
         'duration' => 'required',
         'num_positions' => 'required'
     ];
+
+    /*
+     * Get the Host sponsoring this opportunity
+     */
+    public function host()
+    {
+        return $this->belongsTo('GdrScholars\Models\Host');
+    }
+
 
     /**
      * The transformer used to transform the model data.
