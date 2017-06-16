@@ -116,7 +116,7 @@ class OpportunityAPIController extends AppBaseController
         $opportunity = $this->opportunityRepository->findWithoutFail($id);
 
         if (empty($opportunity)) {
-            return $this->sendError('Opportunity not found');
+            return $this->errorResponse('Opportunity not found');
         }
 
         return $this->successResponse($opportunity);
