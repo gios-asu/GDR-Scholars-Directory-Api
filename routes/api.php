@@ -19,3 +19,5 @@ use Illuminate\Http\Request;
 
 
 Route::resource('opportunities', 'OpportunityAPIController');
+
+Route::post('hosts/{id}/apply', 'HostAPIController@submitApplication');
