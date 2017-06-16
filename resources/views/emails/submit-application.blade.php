@@ -1,7 +1,7 @@
 @component('mail::message')
 # Fellowship Application Submitted
 
-## $opportunityTitle
+## {{ $application['opportunityTitle'] }}
 
 @component('mail::panel')
 Applicant Name: {{ $application['applicantName'] }}  
