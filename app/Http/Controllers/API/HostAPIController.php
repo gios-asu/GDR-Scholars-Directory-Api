@@ -322,7 +322,7 @@ class HostAPIController extends AppBaseController
     public function submitApplication($id, Request $request) {
 
         /** @var Host $host */
-        $host = $this->hostRepository->findWithoutFail($id);
+        $host = $this->hostRepository->findWithoutFail($request->input('hostId'));
 
         if (empty($host)) {
             return $this->sendError('Unable to submit application. Host not found');
