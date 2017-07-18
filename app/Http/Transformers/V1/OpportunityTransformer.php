@@ -1,6 +1,6 @@
 <?php
 
-namespace GdrScholars\Http\Transformers;
+namespace GdrScholars\Http\Transformers\V1;
 
 use Flugg\Responder\Transformer;
 use GdrScholars\Models\Opportunity;

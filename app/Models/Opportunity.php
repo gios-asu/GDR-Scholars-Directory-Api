@@ -4,7 +4,7 @@ namespace GdrScholars\Models;
 
 use Eloquent as Model;
 use Flugg\Responder\Contracts\Transformable;
-use GdrScholars\Http\Transformers\OpportunityTransformer;
+use GdrScholars\Http\Transformers\V1\OpportunityTransformer;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**

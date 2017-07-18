@@ -1,11 +1,11 @@
 <?php
 
-namespace GdrScholars\Http\Requests\API;
+namespace GdrScholars\Http\Requests\API\V1;
 
 use GdrScholars\Models\Opportunity;
 use InfyOm\Generator\Request\APIRequest;
 
-class CreateOpportunityAPIRequest extends APIRequest
+class UpdateOpportunityAPIRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.

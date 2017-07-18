@@ -1,14 +1,13 @@
 <?php
 
-namespace GdrScholars\Http\Controllers\API;
+namespace GdrScholars\Http\Controllers\API\V1;
 
-use GdrScholars\Http\Requests\API\CreateOpportunityAPIRequest;
-use GdrScholars\Http\Requests\API\UpdateOpportunityAPIRequest;
+use GdrScholars\Http\Requests\API\V1\ApplyOpportunityAPIRequest;
 use GdrScholars\Models\Opportunity;
 use GdrScholars\Repositories\OpportunityRepository;
 use Illuminate\Http\Request;
 use GdrScholars\Http\Controllers\AppBaseController;
-use GdrScholars\Http\Transformers\OpportunityTransformer;
+use GdrScholars\Http\Transformers\V1\OpportunityTransformer;
 use InfyOm\Generator\Criteria\LimitOffsetCriteria;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;

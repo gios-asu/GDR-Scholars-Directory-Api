@@ -1,11 +1,11 @@
 <?php
 
-namespace GdrScholars\Http\Requests\API;
+namespace GdrScholars\Http\Requests\API\V1;
 
-use GdrScholars\Models\Opportunity;
+use GdrScholars\Models\Host;
 use InfyOm\Generator\Request\APIRequest;
 
-class UpdateOpportunityAPIRequest extends APIRequest
+class UpdateHostAPIRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,6 +24,6 @@ class UpdateOpportunityAPIRequest extends APIRequest
      */
     public function rules()
     {
-        return Opportunity::$rules;
+        return Host::$rules;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace GdrScholars\Http\Requests\API;
+namespace GdrScholars\Http\Requests\API\V1;
 
 use GdrScholars\Models\Host;
 use InfyOm\Generator\Request\APIRequest;

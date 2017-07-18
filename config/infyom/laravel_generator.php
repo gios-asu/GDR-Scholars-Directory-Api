@@ -25,11 +25,11 @@ return [
 
         'request'           => app_path('Http/Requests/'),
 
-        'api_request'       => app_path('Http/Requests/API/'),
+        'api_request'       => app_path('Http/Requests/API/V1'),
 
         'controller'        => app_path('Http/Controllers/'),
 
-        'api_controller'    => app_path('Http/Controllers/API/'),
+        'api_controller'    => app_path('Http/Controllers/API/V1'),
 
         'test_trait'        => base_path('tests/traits/'),
 
@@ -63,11 +63,11 @@ return [
 
         'controller'        => 'GdrScholars\Http\Controllers',
 
-        'api_controller'    => 'GdrScholars\Http\Controllers\API',
+        'api_controller'    => 'GdrScholars\Http\Controllers\API\V1',
 
         'request'           => 'GdrScholars\Http\Requests',
 
-        'api_request'       => 'GdrScholars\Http\Requests\API',
+        'api_request'       => 'GdrScholars\Http\Requests\API\V1',
     ],
 
     /*
