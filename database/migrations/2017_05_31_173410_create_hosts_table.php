@@ -17,7 +17,7 @@ class CreateHostsTable extends Migration
             $table->increments('id');
             $table->integer('response_id')->comment('GDR Restrict Access');
             $table->integer('response_number')->comment('GDR Restrict Access');
-            $table->string('respondent_name')->comment('GDR Restrict Access');
+            $table->string('respondent_name', 512)->comment('GDR Restrict Access');
             $table->string('respondent_email')->comment('GDR Restrict Access');
             $table->string('host_name');
             $table->string('host_org_type');
