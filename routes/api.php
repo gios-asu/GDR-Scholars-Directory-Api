@@ -19,5 +19,5 @@ use Illuminate\Http\Request;
 
 Route::group(['prefix' => 'v1'], function () {
     Route::resource('opportunities', 'V1\OpportunityAPIController');
-    Route::post('hosts/{id}/apply', 'V1\HostAPIController@submitApplication');
+    Route::post('opportunities/apply', 'V1\HostAPIController@submitApplication');
 });
