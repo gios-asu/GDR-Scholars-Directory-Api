@@ -7,7 +7,7 @@
 Applicant Name: {{ $application['applicantName'] }}  
 Applicant Email: {{ $application['applicantEmail'] }}  
 @if (!empty($application['filePath']))
-Applicant CV: https://s3-us-west-2.amazonaws.com/gios-server-uploads/{{ $application['filePath']  }}  
+Applicant CV: {{ $application['filePath'] }}  
 @endif
 
 Application Statement: {{ $application['applicantStatement'] }}  

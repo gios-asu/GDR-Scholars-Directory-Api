@@ -81,6 +81,7 @@ class HostAPIController extends AppBaseController
         // store fileUpload input in S3 bucket, using auto-generated filename (time-based)
         if (!empty($request->file('fileUpload'))) {
             $filePath = $request->file('fileUpload')->store('gdr-scholars-directory', 's3');
+            $filePath = Storage::disk('s3')->url($filePath);
         } else {
             $filePath = null;
         }
