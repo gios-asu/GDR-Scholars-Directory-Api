@@ -35,6 +35,7 @@ class SubmitApplication extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.submit-application');
+        return $this->markdown('emails.submit-application')
+            ->subject('USAID Fellowship Application has been submitted');
     }
 }
