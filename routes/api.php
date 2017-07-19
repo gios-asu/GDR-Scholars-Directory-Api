@@ -18,6 +18,8 @@ use Illuminate\Http\Request;
 // });
 
 Route::group(['prefix' => 'v1'], function () {
-    Route::resource('opportunities', 'V1\OpportunityAPIController');
+    Route::resource('opportunities', 'V1\OpportunityAPIController', [
+        'only' => ['index', 'show']
+    ]);
     Route::post('opportunities/apply', 'V1\HostAPIController@submitApplication');
 });
