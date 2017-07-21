@@ -22,4 +22,6 @@ Route::group(['prefix' => 'v1'], function () {
         'only' => ['index', 'show']
     ]);
     Route::post('opportunities/apply', 'V1\HostAPIController@submitApplication');
+    Route::post('uploads/submit', 'V1\UploadAPIController@create');
+    Route::post('uploads/delete', 'V1\UploadAPIController@delete');
 });
