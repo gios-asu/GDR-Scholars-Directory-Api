@@ -2,7 +2,6 @@
 
 namespace GdrScholars\Http\Controllers\API\V1;
 
-use GdrScholars\Http\Requests\API\V1\ApplyOpportunityAPIRequest;
 use GdrScholars\Models\Opportunity;
 use GdrScholars\Repositories\OpportunityRepository;
 use Illuminate\Http\Request;
