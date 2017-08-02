@@ -37,3 +37,16 @@ sudo apt-get install php5
 ```
 
 Setup your application configuration settings by copying .env.example into .env and update the appropriate key values. Alternately, save the used application keys to the server environment variables, using your preferred method.
+
+Install composer depndencies:
+
+```
+composer install
+```
+
+Generate a new application key and migrate the database schema:
+
+```
+php artisan key:generate
+php artisan migrate
+```
