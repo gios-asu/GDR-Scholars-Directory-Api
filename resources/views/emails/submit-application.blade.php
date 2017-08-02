@@ -10,7 +10,7 @@ Applicant Email: {{ $application['applicantEmail'] }}<br />
 Applicant CV: <a href="{{ $application['fileUpload'] }}">Download CV</a><br />
 @endif
 
-Application Statement: {{ $application['applicantStatement'] }}<br />
+Applicant's Cover Letter: {{ $application['applicantStatement'] }}<br />
 @endcomponent
 
 Please review this applicant for suitability in your program.
