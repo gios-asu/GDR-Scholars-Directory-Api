@@ -4,6 +4,7 @@ namespace GdrScholars\Http\Controllers\API\V1;
 
 use GdrScholars\Http\Controllers\AppBaseController;
 use GdrScholars\Mail\SubmitApplication;
+use GdrScholars\Mail\AcknowledgeApplication;
 use GdrScholars\Models\Host;
 use GdrScholars\Repositories\HostRepository;
 use Illuminate\Http\Request;
@@ -79,8 +80,13 @@ class HostAPIController extends AppBaseController
         $opportunityTitle = $host->opportunity->title;
         $request->request->add(['opportunityTitle' => $opportunityTitle]);
 
+        // Send submission email to the program host
         Mail::to($host->respondent_email)
             ->send(new SubmitApplication($request->all()));
+
+        // Send acknowledgement email to the applicant
+        Mail::to($request->input('applicantEmail'))
+            ->send(new AcknowledgeApplication($request->all()));
 
         return $this->sendResponse($request->all(), 'Application submitted successfully');
     }
