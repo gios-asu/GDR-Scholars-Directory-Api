@@ -80,9 +80,18 @@ class HostAPIController extends AppBaseController
         $opportunityTitle = $host->opportunity->title;
         $request->request->add(['opportunityTitle' => $opportunityTitle]);
 
+        $submitApplication = new SubmitApplication($request->all());
+
         // Send submission email to the program host
         Mail::to($host->respondent_email)
-            ->send(new SubmitApplication($request->all()));
+            ->send($submitApplication);
+
+        // Send copy of submission to the ASU GDR program
+        Mail::to([
+            'address' => env('MAIL_FROM_ADDRESS'),
+            'name' => env('MAIL_FROM_NAME'),
+        ])
+            ->send($submitApplication);
 
         // Send acknowledgement email to the applicant
         Mail::to($request->input('applicantEmail'))
