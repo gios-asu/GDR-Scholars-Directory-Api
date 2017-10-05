@@ -84,13 +84,7 @@ class HostAPIController extends AppBaseController
 
         // Send submission email to the program host
         Mail::to($host->respondent_email)
-            ->send($submitApplication);
-
-        // Send copy of submission to the ASU GDR program
-        Mail::to([
-            'address' => env('MAIL_FROM_ADDRESS'),
-            'name' => env('MAIL_FROM_NAME'),
-        ])
+            ->cc(env('MAIL_FROM_ADDRESS'))
             ->send($submitApplication);
 
         // Send acknowledgement email to the applicant
