@@ -176,7 +176,7 @@ return [
         // GdrScholars\Providers\BroadcastServiceProvider::class,
         GdrScholars\Providers\EventServiceProvider::class,
 
-        Appointer\Swaggervel\SwaggervelServiceProvider::class,
+        //Appointer\Swaggervel\SwaggervelServiceProvider::class,
         GdrScholars\Providers\RouteServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
 
