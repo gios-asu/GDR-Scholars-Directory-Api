@@ -1,0 +1,9 @@
+.dockerignore
+.git
+composer.phar
+composer-install.sh
+Dockerfile.app
+Dockerfile.web
+docker-build-images.sh
+docker-compose.yml
+rancher-conf/
