@@ -19,34 +19,88 @@ The GDR Scholars Catalog is a basic DataTables interface for browsing USAID Fell
 
 Pagination and sort is available on GET:/api/v1/opportunities. For example, to retrieve 10 results per page and begin with the results on the second page, sorted by country:
 ```
-http://server.app/api/v1/opportunities?limit=10&offset=10&orderBy=country
+http://localhost/api/v1/opportunities?limit=10&offset=10&orderBy=country
 ```
 
 
 ## Development Requirements
 
-* PHP Version 7.0+
-* phpunit
+* Docker CE 17.05+
 
-## Installation Instructions
+## Development/Testing Instructions
 
-* Install PHP version 7.0+
+### 1. Make sure Docker is running on your computer
 
 ```shd
-sudo apt-get install php5
+docker --version
 ```
 
-Setup your application configuration settings by copying .env.example into .env and update the appropriate key values. Alternately, save the used application keys to the server environment variables, using your preferred method.
+Setup your application configuration settings by copying .env.example into .env and update the appropriate key values. The default values in .env.example are suitable for the local dev environment in Docker.
 
-Install composer depndencies:
-
-```
-composer install
-```
-
-Generate a new application key and migrate the database schema:
+### 2. Install composer dependencies and prep project to be deployed in Docker:
 
 ```
-php artisan key:generate
-php artisan migrate
+sh composer-install-development.sh
 ```
+
+### 3. Build the dev images for Docker:
+
+```
+docker-compose build
+```
+
+### 4. Launch the API containers:
+
+```
+docker-compose up -d
+```
+
+### 5. Set up database for development
+
+If you want to seed to the database with fake data:
+
+```
+docker exec apigdrscholarsgiosasuedu_api-gdrscholars-app_1 php artisan migrate --seed
+```
+
+If you only want the database tables to be built and left empty:
+
+```
+docker exec apigdrscholarsgiosasuedu_api-gdrscholars-app_1 php artisan migrate
+```
+
+### 6. Access API using provided endpoints
+
+The api is now served at: http://localhost and the endpoints listed above. (e.g. http://localhost/api/v1/opportunities)
+
+
+## Deploy to production server(s)
+
+### 1. Make sure Docker is running on your computer
+
+```shd
+docker --version
+```
+
+Setup the application configuration settings by copying .env.example into .env and update the appropriate key values for production.
+
+### 2. Install composer dependencies and prep project to be deployed in Docker:
+
+```
+sh composer-install-production.sh
+```
+
+### 3. Build the production images and push to AWS registry (ECR):
+
+Sign in to AWS ECR service (You must already have set up AWS CLI and the AWS credentials; sign-in expires after 12 hours):
+
+```
+aws ecr get-login --profile gios-docker --no-include-email --region us-west-2
+```
+
+Build images and push to ECR:
+```
+sh docker-build-images.sh
+```
+
+Updated images can be installed into running containers through the Rancher management dashboard.
